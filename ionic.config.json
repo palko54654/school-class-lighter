@@ -1,0 +1,7 @@
+{
+  "name": "SchoolClassLighter",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
