@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      TEI
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,5 +13,15 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="5" size-sm="4" size-md="3" size-lg="2" *ngFor="let room of rooms">
+        <!-- Main Button -->
+        <ion-button expand="block">
+          <ion-label>{{ room.main }}</ion-label>
+        </ion-button>
+        <!-- Place Sub Buttons here if needed -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

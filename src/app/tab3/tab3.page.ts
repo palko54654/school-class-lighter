@@ -6,6 +6,30 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
+  rooms = [
+    {
+      main: "TEI0",
+    },
+    {
+      main: "TEI1",
+    },
+    {
+      main: "TEI2",
+    },
+    {
+      main: "TEI3",
+    },
+    {
+      main: "TEI4",
+    },
+    {
+      main: "TEI5",
+    },
+    {
+      main: "TEI6",
+    }
+  ];
+
 
   constructor() {}
 
