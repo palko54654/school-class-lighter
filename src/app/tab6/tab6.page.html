@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>
+        Kabinety
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">Tab 1</ion-title>
+      </ion-toolbar>
+    </ion-header>
+  
+    <ion-list>
+      <div *ngFor="let room of rooms">
+        <!-- Main Button -->
+        <ion-button (click)="toggleSubs(room)">
+          <ion-label>{{ room.main }}</ion-label>
+        </ion-button>
+        <!-- Sub Buttons -->
+        <div *ngIf="visibleSubs[room.main]">
+          <ion-item *ngFor="let sub of room.subs" detail>
+            <ion-label>{{ sub }}</ion-label>
+          </ion-item>
+        </div>
+      </div>
+    </ion-list>
+  </ion-content>
+  
