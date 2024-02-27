@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WifiService } from '../components/wifi.service';
 
 @Component({
   selector: 'app-tab3',
@@ -7,30 +8,20 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
   rooms = [
-    {
-      main: "TEI0",
-    },
-    {
-      main: "TEI1",
-    },
-    {
-      main: "TEI2",
-    },
-    {
-      main: "TEI3",
-    },
-    {
-      main: "TEI4",
-    },
-    {
-      main: "TEI5",
-    },
-    {
-      main: "TEI6",
-    }
+     "TEI0",
+    "TEI1",
+    "TEI2",
+     "TEI3",
+     "TEI4",
+     "TEI5",
+    "TEI6",
   ];
 
 
-  constructor() {}
+  constructor(private wifiService: WifiService) {}
+
+  toggleSubs(main: string) {
+    this.wifiService.sendMessage(main);
+  }
 
 }

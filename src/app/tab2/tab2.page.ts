@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WifiService } from '../components/wifi.service';
 
 @Component({
   selector: 'app-tab2',
@@ -28,7 +29,7 @@ export class Tab2Page {
   // Object to keep track of which main button's subs are visible
   visibleSubs: any = {};
 
-  constructor() {}
+  constructor(private wifiService: WifiService) {}
 
   ngOnInit(): void {
     this.rooms.forEach(room => {
@@ -38,6 +39,8 @@ export class Tab2Page {
 
   toggleSubs(main: number) {
     this.visibleSubs[main] = !this.visibleSubs[main];
+    const mainString = main.toString();
+    this.wifiService.sendMessage(mainString);
   }
 
 }
