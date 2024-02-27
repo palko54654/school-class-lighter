@@ -47,7 +47,7 @@ export class Tab1Page implements OnInit {
   toggleSubs(main: number) {
     this.visibleSubs[main] = !this.visibleSubs[main];
     const mainString = main.toString();
-    this.wifiService.sendMessage(mainString);
+    this.wifiService.sendData(this.wifiService.deviceId, mainString);
   }
 
   selectSub(sub: number) {

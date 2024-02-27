@@ -38,11 +38,4 @@
     <!-- Permissions -->
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    
-    <!-- Location permission is required for Bluetooth scanning on Android 6.0 and above -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <!-- Optional: Consider requesting location access only when in use -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 </manifest>

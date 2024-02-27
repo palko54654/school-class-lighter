@@ -21,7 +21,7 @@ export class Tab5Page {
   constructor(private wifiService: WifiService) {}
 
   toggleSubs(key: string) {
-    this.wifiService.sendMessage(key);
+    this.wifiService.sendData(this.wifiService.deviceId, key);
   }
 
 }

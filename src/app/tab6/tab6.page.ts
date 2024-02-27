@@ -79,7 +79,7 @@ export class Tab6Page implements OnInit {
 
   toggleSubs(room: any) {
     this.visibleSubs[room.main] = !this.visibleSubs[room.main];
-    this.wifiService.sendMessage(room.key);
+    this.wifiService.sendData(this.wifiService.deviceId, room.key);
   }
 
   selectSub(sub: number) {

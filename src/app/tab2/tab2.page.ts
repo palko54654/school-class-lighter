@@ -41,7 +41,7 @@ export class Tab2Page {
   toggleSubs(main: number) {
     this.visibleSubs[main] = !this.visibleSubs[main];
     const mainString = main.toString();
-    this.wifiService.sendMessage(mainString);
+    this.wifiService.sendData(this.wifiService.deviceId, mainString);
   }
 
   selectSub(sub: number) {
