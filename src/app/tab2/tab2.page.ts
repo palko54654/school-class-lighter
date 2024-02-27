@@ -28,6 +28,7 @@ export class Tab2Page {
 
   // Object to keep track of which main button's subs are visible
   visibleSubs: any = {};
+  selectedSub: number | null = null; // Add this line
 
   constructor(private wifiService: WifiService) {}
 
@@ -41,6 +42,18 @@ export class Tab2Page {
     this.visibleSubs[main] = !this.visibleSubs[main];
     const mainString = main.toString();
     this.wifiService.sendMessage(mainString);
+  }
+
+  selectSub(sub: number) {
+    let subString = sub.toString();
+
+    // Check if the string has at least one character to avoid errors
+    if (subString.length > 0) {
+      // Replace the first character with '5'
+      subString = '5' + subString.substring(1);
+    }
+    // Convert the modified string back to a number
+    this.selectedSub = parseInt(subString, 10);
   }
 
 }

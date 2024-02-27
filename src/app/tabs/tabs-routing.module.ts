@@ -42,6 +42,11 @@ const routes: Routes = [
         pathMatch: 'full'
       }
     ],
+  },
+  {
+    path: '',
+    redirectTo: '/tabs/ipaddress',
+    pathMatch: 'full'
   }
 ];
 

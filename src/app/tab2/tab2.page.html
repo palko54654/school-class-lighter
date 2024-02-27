@@ -14,18 +14,20 @@
   </ion-header>
 
   <ion-list>
-    <div *ngFor="let room of rooms">
+    <div *ngFor="let room of rooms" class="room-container">
       <!-- Main Button -->
       <ion-button (click)="toggleSubs(room.main)">
         <ion-label>{{ room.main }}</ion-label>
       </ion-button>
       <!-- Sub Buttons -->
-      <div *ngIf="visibleSubs[room.main]">
-        <ion-item *ngFor="let sub of room.subs" detail>
+      <div *ngIf="visibleSubs[room.main]" style="width: 100%;">
+        <ion-item *ngFor="let sub of room.subs" detail (click)="selectSub(sub)">
           <ion-label>{{ sub }}</ion-label>
         </ion-item>
       </div>
     </div>
   </ion-list>
-
+  <div *ngIf="selectedSub" class="image-container">
+    <img [src]="'assets/images/' + selectedSub + '.png'" />
+  </div>
 </ion-content>

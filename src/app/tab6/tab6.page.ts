@@ -64,10 +64,10 @@ export class Tab6Page implements OnInit {
             key: "ZBR"
         }
         
-      ];
+    ];
 
-      visibleSubs: any = {};
-  ipAddress: string = '';
+    visibleSubs: any = {};
+    selectedSub: number | null = null; // Add this line
 
   constructor(private router: Router, private wifiService: WifiService) {}
 
@@ -80,5 +80,18 @@ export class Tab6Page implements OnInit {
   toggleSubs(room: any) {
     this.visibleSubs[room.main] = !this.visibleSubs[room.main];
     this.wifiService.sendMessage(room.key);
+  }
+
+  selectSub(sub: number) {
+    let subString = sub.toString();
+
+    // Check if the string starts with 2, 3, or 4
+    if (subString.startsWith('2') || subString.startsWith('3') || subString.startsWith('4')) {
+      // Replace the first character with '5'
+      subString = '5' + subString.substring(1);
+    }
+  
+    // Convert the modified string back to a number and update selectedSub
+    this.selectedSub = parseInt(subString, 10);
   }
 }

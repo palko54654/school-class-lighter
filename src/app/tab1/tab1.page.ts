@@ -34,6 +34,7 @@ export class Tab1Page implements OnInit {
   // Object to keep track of which main button's subs are visible
   visibleSubs: any = {};
   ipAddress: string = '';
+  selectedSub: number | null = null; // Add this line
 
   constructor(private router: Router, private wifiService: WifiService) {}
 
@@ -47,5 +48,9 @@ export class Tab1Page implements OnInit {
     this.visibleSubs[main] = !this.visibleSubs[main];
     const mainString = main.toString();
     this.wifiService.sendMessage(mainString);
+  }
+
+  selectSub(sub: number) {
+    this.selectedSub = sub;
   }
 }
